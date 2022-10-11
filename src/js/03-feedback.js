@@ -11,13 +11,12 @@ feedback.addEventListener('input', throttle(saveData, 500))
 
 const currentForm = window.localStorage.getItem(feedbackFormState);
 
-const saveData = () => {
+function saveData() {
     const data = {
     email: input.value,
     message: textarea.value,
   };
-    window.localStorage.setItem(feedbackFormState, data);
-    console.log(window.localStorage)
+    window.localStorage.setItem(feedbackFormState, JSON.stringify(data));
 }
 
 if (localStorage.length !== 0) {
