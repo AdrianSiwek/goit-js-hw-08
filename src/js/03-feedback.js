@@ -16,7 +16,7 @@ function saveData() {
     email: input.value,
     message: textarea.value,
   };
-  localStorage.setItem(feedbackFormState, JSON.stringify(data));
+    window.localStorage.setItem(feedbackFormState, data);
 }
 
 if (localStorage.length !== 0) {
